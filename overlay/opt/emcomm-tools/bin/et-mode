@@ -2,7 +2,7 @@
 #
 # Author   : Gaston Gonzalez
 # Date     : 6 November 2024
-# Updated  : 18 March 2025
+# Updated  : 25 March 2025
 # Purpose  : Configures the system for a specific mode of operation
 
 # Use a simple text file to save the state of the last mode selected
@@ -16,6 +16,7 @@ MODE_ID_APRS_DIGIPEATER="aprs-digipeater"
 MODE_ID_APRS_CLIENT="aprs-client" 
 MODE_ID_BBS_CLIENT="bbs-client" 
 MODE_ID_BBS_CLIENT2="bbs-client2" 
+MODE_ID_BBS_SERVER="bbs-server" 
 MODE_ID_CHAT_CLIENT="chat-chattervox" 
 MODE_ID_PACKET_DIGIPEATER="packet-digipeater" 
 MODE_ID_WINLINK_ARDOP="winlink-ardop" 
@@ -133,6 +134,7 @@ options+=("${MODE_ID_NONE}" "No mode selected")
 options+=("${MODE_ID_APRS_CLIENT}" "APRS Client (YAAC)")
 options+=("${MODE_ID_BBS_CLIENT}" "BBS Client (Paracon)")
 options+=("${MODE_ID_BBS_CLIENT2}" "BBS Client (QtTermTCP)")
+options+=("${MODE_ID_BBS_SERVER}" "BBS Server (LinBPQ)")
 options+=("${MODE_ID_CHAT_CLIENT}" "Chat (chattervox)")
 options+=("${MODE_ID_APRS_DIGIPEATER}" "APRS Digipeater")
 options+=("${MODE_ID_PACKET_DIGIPEATER}" "Packet Digipeater")
@@ -219,6 +221,11 @@ if [ $exit_status -eq 0 ]; then
 
       et-log "Starting QtTermTCP."
       et-qttermtcp start
+    ;;
+    ${MODE_ID_BBS_SERVER})
+      start_and_wait_for_service et-service-direwolf-simple
+      et-log "Starting BBS server."
+      et-bbs-server start
     ;;
     ${MODE_ID_CHAT_CLIENT})
       start_and_wait_for_service et-service-direwolf-simple
