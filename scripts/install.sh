@@ -2,7 +2,7 @@
 #
 # Author  : Gaston Gonzalez
 # Date    : 16 March 2024
-# Updated : 22 November 2024
+# Updated : 18 March 2025
 # Purpose : Main installer for EmComm Tools OS Community
 
 . ./env.sh
@@ -15,6 +15,7 @@ exitIfNotRoot
 
 ./install-base.sh
 ./install-dev-tools.sh
+./install-pup.sh
 ./install-browser.sh
 ./remove-packages.sh
 ./install-branding.sh
@@ -39,6 +40,10 @@ exitIfNotRoot
 ./install-direwolf.sh
 ./install-yaac.sh
 ./install-bbs-client.sh
+./install-bbs-server.sh
+./install-chattervox.sh
+./install-qttermtcp.sh
+./install-packet.sh
 
 # Install modems
 ./install-ardop.sh
@@ -47,5 +52,11 @@ exitIfNotRoot
 
 ./install-audio-tools.sh
 
+# Offline KBs (Cyberdeck)
+./install-wikipedia.sh
+
 # Add user-specific data
 ./download-osm-maps.sh
+[ ! -z "${ET_EXPERT}" ] && ./download-wikipedia.sh
+
+./install-wine.sh
