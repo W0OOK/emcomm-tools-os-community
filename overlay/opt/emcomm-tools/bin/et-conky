@@ -2,6 +2,7 @@
 #
 # Author  : Gaston Gonzalez
 # Date    : 21 November 2024
-# Purpose : Wrapper script for starting conky as there issues with normal startup
+# Updated : 27 December 2025
+# Purpose : Wrapper script for starting conky
 
-sleep 3 && /usr/bin/conky > /dev/null 2>&1 &
+/usr/bin/conky -q --daemonize --pause=8 

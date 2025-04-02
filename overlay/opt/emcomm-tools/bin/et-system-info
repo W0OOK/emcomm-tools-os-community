@@ -2,7 +2,7 @@
 #
 # Author   : Gaston Gonzalez
 # Date     : 6 October 2024
-# Updated  : 21 November 2024
+# Updated  : 25 March 2025
 # Purpose  : Utility script for dumping system information
 
 function usage() {
@@ -176,10 +176,16 @@ case $1 in
 
     MODE_ID_NONE="none"
     MODE_ID_APRS_DIGIPEATER="aprs-digipeater"
+    MODE_ID_BBS_CLIENT="bbs-client"
+    MODE_ID_BBS_CLIENT2="bbs-client2"
+    MODE_ID_BBS_SERVER="bbs-server"
+    MODE_ID_CHAT_CLIENT="chat-chattervox"
     MODE_ID_PACKET_DIGIPEATER="packet-digipeater"
     MODE_ID_APRS_CLIENT="aprs-client"
     MODE_ID_WINLINK_ARDOP="winlink-ardop"
     MODE_ID_WINLINK_PACKET="winlink-packet"
+    MODE_ID_WINLINK_VARA_HF="winlink-vara-hf"
+    MODE_ID_WINLINK_VARA_FM="winlink-vara-fm"
 
     if [ ! -e /dev/et-audio ]; then 
       echo "Run 'et-mode' to set"
@@ -197,6 +203,18 @@ case $1 in
       ${MODE_ID_APRS_CLIENT})
         echo "APRS"
       ;;
+      ${MODE_ID_BBS_CLIENT})
+        echo "BBS Client"
+      ;;
+      ${MODE_ID_BBS_CLIENT2})
+        echo "BBS Client"
+      ;;
+      ${MODE_ID_BBS_SERVER})
+        echo "BBS Server"
+      ;;
+      ${MODE_ID_CHAT_CLIENT})
+        echo "Chat (chattervox)"
+      ;;
       ${MODE_ID_PACKET_DIGIPEATER})
         echo "Packet Digipeater"
       ;;
@@ -205,6 +223,12 @@ case $1 in
       ;;
       ${MODE_ID_WINLINK_PACKET})
         echo "Winlink Packet"
+      ;;
+      ${MODE_ID_WINLINK_VARA_FM})
+        echo "Winlink VARA FM"
+      ;;
+      ${MODE_ID_WINLINK_VARA_HF})
+        echo "Winlink VARA HF"
       ;;
       *)
         echo "Unknown"

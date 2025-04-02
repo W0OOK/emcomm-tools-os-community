@@ -2,7 +2,7 @@
 #
 # Author  : Gaston Gonzalez
 # Date    : 1 November 2024
-# Updated : 8 November 2024
+# Updated : 14 January 2025
 # Purpose : Wrapper script for starting Dire Wolf with PnP support
 #
 # Preconditions:
@@ -23,13 +23,25 @@ usage() {
   echo "  <type>"
   echo "    aprs-digipeater    - Run in RF-only APRS digipeater mode"
   echo "    packet-digipeater  - Run in RF-only packet digipeater mode"
-  echo "    simple             - Run in simple packet mode"
+  echo "    simple             - Run in simple (1200 baud) packet mode"
+  echo "    300                - Run in 300 baud packet mode (HF)"
+  echo "    9600               - Run in 9600 baud packet mode (VHF/UHF)"
 }
 
 if [ $# -ne 2 ]; then
   usage
   exit 1
 fi
+
+check_9600_baud () {
+
+  # For 9600 baud operation, we use the /dev/et-cat device directly
+  # in direwolf, instead of going through rigctl.
+  if [ ! -e /dev/et-cat ]; then
+    et-log "PTT devices not found for 9600 baud operation."
+    exit 1
+  fi
+}
 
 MODE=$2
 case "${MODE}" in
@@ -40,6 +52,13 @@ case "${MODE}" in
     DIREWOLF_TEMPLATE_CONF_FILE="${ET_HOME}/conf/template.d/packet/direwolf.${MODE}.conf"
   ;;
   simple)
+    DIREWOLF_TEMPLATE_CONF_FILE="${ET_HOME}/conf/template.d/packet/direwolf.${MODE}.conf"
+  ;;
+  300)
+    DIREWOLF_TEMPLATE_CONF_FILE="${ET_HOME}/conf/template.d/packet/direwolf.${MODE}.conf"
+  ;;
+  9600)
+    check_9600_baud
     DIREWOLF_TEMPLATE_CONF_FILE="${ET_HOME}/conf/template.d/packet/direwolf.${MODE}.conf"
   ;;
   *)
@@ -60,7 +79,7 @@ notify_user() {
 [ ! -e ${ET_LOG_DIR} ] && mkdir -p ${ET_LOG_DIR}
 
 start() {
-  update-config
+  update_config
   
   if [ $? -eq 0 ]; then
 
@@ -81,7 +100,8 @@ start() {
   fi
 }
 
-update-config () {
+
+update_config () {
 
     et-log "Attempting to start Dire Wolf in mode: '${MODE}'"
 
@@ -140,7 +160,7 @@ case $1 in
     start
     ;;
   update-config)
-    update-config
+    update_config
     ;;
   *)
     echo "Invalid command."

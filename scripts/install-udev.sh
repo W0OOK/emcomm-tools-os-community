@@ -1,6 +1,7 @@
 #!/bin/bash
 # Author  : Gaston Gonzalez
 # Date    : 1 October 2024
+# Updated : 15 February 2025
 # Purpose : Install udev rules for CAT, GPS and audio PnP support
 set -e
 
@@ -11,3 +12,5 @@ udevadm control --reload
 et-log "Disable brltty.."
 systemctl mask brltty-udev.service
 systemctl stop brltty-udev.service
+systemctl mask brltty.service
+systemctl stop brltty.service
