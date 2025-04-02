@@ -4,7 +4,7 @@
 #          : Cliff Jones
 # Date     : 1 January 2025
 # Updated  : 17 March 2025
-# Purpose  : Utility for accessing the Bluetooth TNC on the BTECH UV PRO.           
+# Purpose  : Utility for accessing the Bluetooth TNC on the Vero VGC VR-N76.           
 source /opt/emcomm-tools/bin/et-common
 
 CLEAN_UP=1

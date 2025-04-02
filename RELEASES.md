@@ -1,5 +1,42 @@
 # EmComm Tools OS Community Release
 
+# 2025.04.01.R4 (4.0.0)
+
+* Tier 1 radio PnP support
+  * Yaesu FT-991A
+* Tier 2 radio PnP support
+  * Icom IC-7300
+  * Elecraft KX2 (DigiRig Mobile)
+* et-mode
+  * BBS Client 1: Paracon (AGW radio terminal)
+  * BBS Client 2: QtTermTCP (multi mode radio terminal)
+  * BBS Server: 1200 baud packet node/BBS using LinBPQ 
+  * Chattervox: Packet-based chat client
+  * Added 300, 1200, and 9600 baud packet packet to direwolf
+  * Added VARA HF and VARA FM mode selection if installed
+* GPS PnP support
+  * Dell 7220 (u-blox 8 receiver)
+* Winlink
+  * Enabled P2P listening for AX.25 and ARDOP
+  * Updated RMS list as of 03/27/25
+* Bluetooth TNC support
+  * et-uv-pro: Support for BTECH UV Pro
+  * et-vr-n76: support for Vero VGC NR-76
+  * et-th-d74: support for Kenwood TH-D74
+  * Added support for: axcall, QtTermTCP, Winlink, and YAAC
+* WINE
+  * Added basic installation of WINE
+  * Added scripts (`~/add-on/wine/*.sh`) to install VARA HF/FM
+* Misc
+  * Added kiwix for offline Wikipedia and/or .zim browsing
+  * et-user-backup: Performs ETC configuration backup
+  * et-user-restore: Restores ETC configuration
+  * Added misc tooling: pup, socat 
+* Bug fixes
+  * Updated OSM map downloader to work with updates to Geofabrik site
+  * Fixed formatting of et-radio text output
+  * Resolved inconsistent Conky startup behavior
+
 # 2024.11.27.R3 (3.0.0)
 
 * Plug-and-Play (PnP) support for CAT control, sound card, and GPS
