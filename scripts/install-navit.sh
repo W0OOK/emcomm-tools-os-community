@@ -20,4 +20,4 @@ apt install \
   maptool \
   espeak \
   osmium-tool \
-  -y 
+  -y

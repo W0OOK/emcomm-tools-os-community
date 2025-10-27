@@ -9,7 +9,7 @@ set -e
 ET_GID=1981
 
 et-log "Adding '${ET_GROUP}' group..."
-groupadd -g ${ET_GID} ${ET_GROUP} 
+groupadd -g ${ET_GID} ${ET_GROUP}
 
 et-log "Configuring users..."
 

@@ -17,20 +17,20 @@ INSTALL_DIR="/opt/${APP}-${VERSION}"
 INSTALL_BIN_DIR="${INSTALL_DIR}/bin"
 LINK_PATH="/opt/${APP}"
 
-et-log "Enabling i386 architecture support.."
-dpkg --add-architecture i386
+et-log "Enabling arm64 architecture support.."
+dpkg --add-architecture arm64
 apt update
 
 et-log "Installing QtTermTCP 32-bit build dependencies..."
 apt install \
-  qtbase5-dev:i386 \
-  qtbase5-dev-tools:i386 \
-  qt5-qmake:i386 \
-  qtchooser:i386 \
-  qtmultimedia5-dev:i386 \
-  libqt5serialport5-dev:i386 \
-  libfftw3-dev:i386 \
-  qttools5-dev-tools:i386 \
+  qtbase5-dev:arm64 \
+  qtbase5-dev-tools:arm64 \
+  qt5-qmake:arm64 \
+  qtchooser:arm64 \
+  qtmultimedia5-dev:arm64 \
+  libqt5serialport5-dev:arm64 \
+  libfftw3-dev:arm64 \
+  qttools5-dev-tools:arm64 \
   -y
 
 et-log "Installing QtTermTCP build dependencies..."

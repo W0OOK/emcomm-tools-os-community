@@ -9,7 +9,7 @@
 # https://themodernham.com/install-linbpq-bbs-packet-node-on-debian-ubuntu-and-raspbian/
 
 VERSION=latest
-FILE=linbpq
+FILE=pilinbpq64
 LINK_PATH=/opt/linbpq
 INSTALL_DIR=/opt/linbpq-${VERSION}
 INSTALL_BIN_DIR=${INSTALL_DIR}/bin
@@ -49,12 +49,12 @@ else
 fi
 
 # Install Linbpq
-et-log "Installing 32-bit dependencies for Linbpq..."
-dpkg --add-architecture i386 &&  apt update && apt install \
-  libpcap0.8-dev:i386 \
-  libasound2-dev:i386 \
-  libz3-4:i386 \
-  zlib1g:i386 \
+et-log "Installing 64-bit dependencies for Linbpq..."
+dpkg --add-architecture arm64 &&  apt update && apt install \
+  libpcap0.8-dev:arm64 \
+  libasound2-dev:arm64 \
+  libz3-4:arm64 \
+  zlib1g:arm64 \
   -y
 
 URL="https://www.cantab.net/users/john.wiseman/Downloads/${FILE}"
@@ -65,7 +65,7 @@ if [ ! -e ${FILE} ]; then
 fi
 
 [ ! -e ${INSTALL_BIN_DIR} ] && mkdir -v -p ${INSTALL_BIN_DIR}
-chmod 755 ${FILE} && mv -v ${FILE} ${INSTALL_BIN_DIR}
+chmod 755 ${FILE} && mv -v ${FILE} ${INSTALL_BIN_DIR}/linbpq
 
 CWD_DIR=$(pwd)
 

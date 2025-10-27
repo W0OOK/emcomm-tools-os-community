@@ -24,13 +24,13 @@ exitIfNotRoot
 ./configure-user.sh
 
 ./install-emcomm-tools.sh
-./fix-panasonic-brightness.sh
+# ./fix-panasonic-brightness.sh
 
 ./install-hamlib.sh
 ./install-js8call.sh
 
 ./install-udev.sh
-./install-gps.sh 
+./install-gps.sh
 ./install-navit.sh
 ./install-cat.sh
 
@@ -41,7 +41,7 @@ exitIfNotRoot
 ./install-yaac.sh
 ./install-bbs-client.sh
 ./install-bbs-server.sh
-./install-chattervox.sh
+# ./install-chattervox.sh
 ./install-qttermtcp.sh
 ./install-packet.sh
 

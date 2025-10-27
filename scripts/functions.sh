@@ -1,8 +1,8 @@
 #!/bin/bash
 #
-# Author  : Gaston Gonzalez 
+# Author  : Gaston Gonzalez
 # Date    : 16 March 2024
-# Purpose : Global functions 
+# Purpose : Global functions
 
 function exitIfNotRoot() {
   if [ $EUID -ne 0 ]; then

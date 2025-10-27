@@ -8,9 +8,9 @@ WIN32_DIR="${HOME}/.win32"
 
 et-log "Installing WINE..."
 
-# Check for an existing i386 architecture
-ARCH_OUT=$(dpkg --print-foreign-architectures | grep i386)
-[ $? -ne 0 ] && dpkg --add-architecture i386
+# Check for an existing arm64 architecture
+ARCH_OUT=$(dpkg --print-foreign-architectures | grep arm64)
+[ $? -ne 0 ] && dpkg --add-architecture arm64
 
 #if [ ! -e "/etc/apt/keyrings/winehq-archive.key" ]; then
 #  et-log "Adding apt keys for official wine repo"

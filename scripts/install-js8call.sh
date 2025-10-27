@@ -10,7 +10,7 @@ trap 'et-log "\"${last_command}\" command failed with exit code $?."' ERR
 . ./env.sh
 
 VERSION="2.2.0"
-FILE="js8call_${VERSION}_20.04_amd64.deb"
+FILE="js8call_${VERSION}_armhf.deb"
 URL="http://files.js8call.com/${VERSION}/${FILE}"
 
 et-log "Installing JS8Call dependencies..."

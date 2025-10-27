@@ -4,7 +4,7 @@
 # Purpose : Install pup (HTML processing)
 
 VERSION="0.4.0"
-ZIP_FILE="pup_v${VERSION}_linux_amd64.zip"
+ZIP_FILE="pup_v${VERSION}_linux_arm.zip"
 INSTALL_DIR="/opt/pup-${VERSION}"
 INSTALL_DIR_BIN="${INSTALL_DIR}/bin"
 LINK_PATH="/opt/pup"

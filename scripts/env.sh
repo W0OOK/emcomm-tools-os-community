@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# Author  : Gaston Gonzalez 
+# Author  : Gaston Gonzalez
 # Date    : 16 March 2024
 # Updated : 19 May 2024
 # Purpose : Global environment variables

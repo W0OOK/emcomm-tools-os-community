@@ -9,7 +9,7 @@ set -e
 ET_DIST_DIR=/opt/dist
 ET_SRC_DIR=/opt/src
 
-VERSION=4.5
+VERSION=4.6.5
 APP_AND_VERSION=hamlib-$VERSION
 TARBALL=$APP_AND_VERSION.tar.gz
 URL=https://github.com/Hamlib/Hamlib/releases/download/$VERSION/$TARBALL

@@ -1,7 +1,7 @@
 #!/bin/bash
 #
 # Author  : Gaston Gonzalez
-# Date    : 16 March 2024 
+# Date    : 16 March 2024
 # Updated : 16 March 2025
 # Purpose : Install light weight web browsers
 #
@@ -12,7 +12,7 @@
 et-log "Installing Min web browser..."
 
 VERSION="1.34.1"
-FILE="min-${VERSION}-amd64.deb"
+FILE="min-${VERSION}-arm64.deb"
 URL="https://github.com/minbrowser/min/releases/download/v${VERSION}/${FILE}"
 
 if [ ! -e $ET_DIST_DIR/$FILE ]; then
@@ -40,7 +40,7 @@ if [ $? -ne 0 ]; then
   # Add Brave repository.
   curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
 
-  echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main"|sudo tee /etc/apt/sources.list.d/brave-browser-release.list
+  echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg arch=arm64] https://brave-browser-apt-release.s3.brave.com/ stable main"|sudo tee /etc/apt/sources.list.d/brave-browser-release.list
 
   apt update
 

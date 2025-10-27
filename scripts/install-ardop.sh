@@ -7,7 +7,7 @@ trap 'last_command=$current_command; current_command=$BASH_COMMAND' DEBUG
 trap 'et-log "\"${last_command}\" command failed with exit code $?."' ERR
 
 VERSION=1.0.4.1.3
-DOWNLOAD_FILE=ardopcf_amd64_Linux_64
+DOWNLOAD_FILE=ardopcf_arm64_Linux_64
 BIN_FILE=ardopcf
 INSTALL_DIR=/opt/ardop-${VERSION}
 INSTALL_BIN_DIR="${INSTALL_DIR}/bin"

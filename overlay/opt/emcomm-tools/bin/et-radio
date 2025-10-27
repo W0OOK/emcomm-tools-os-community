@@ -36,7 +36,7 @@ if [ $exit_status -eq 0 ]; then
 
   RADIO_CONF="${ET_HOME}/conf/radios.d/$SELECTED_RADIO.json"
   [ -e ${ACTIVE_RADIO} ] &&  rm ${ACTIVE_RADIO} 
-  ln -s ${RADIO_CONF} ${ACTIVE_RADIO}
+  sudo ln -s ${RADIO_CONF} ${ACTIVE_RADIO}
   echo "Set active radio to: $SELECTED_RADIO"
 
   ID=$(cat ${ACTIVE_RADIO} | jq -r .id)

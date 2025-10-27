@@ -22,7 +22,9 @@ apt install \
   imagemagick \
   jq \
   net-tools \
-  openjdk-20-jdk \
+  libjssc-java \
+  openjdk-8-jre \
+  openjdk-25-jdk \
   openssh-server \
   screen \
   socat \
